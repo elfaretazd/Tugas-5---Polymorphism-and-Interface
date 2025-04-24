@@ -1,0 +1,44 @@
+package praktic.geometry.shapes;
+
+import praktic.geometry.bases.CircularShape;
+import praktic.geometry.interfaces.ThreeDimensional;
+import praktic.geometry.interfaces.Weightable;
+
+public class Sphere extends CircularShape implements ThreeDimensional, Weightable {
+    private double mass;
+
+    public Sphere() {
+        this.radius = 0;
+        this.mass = 0;
+        setName("Sphere");
+    }
+
+    public Sphere(double radius, double mass) {
+        this.radius = radius;
+        this.mass = mass;
+        setName("Sphere");
+    }
+
+    @Override
+    public double getSurfaceArea() {
+        return (4 * PI_NUMERATOR * radius * radius) / PI_DENOMINATOR;
+    }
+
+    @Override
+    public double getVolume() {
+        return (4.0 / 3) * ((PI_NUMERATOR * radius * radius * radius) / PI_DENOMINATOR);
+    }
+
+    @Override
+    public double getWeight() {
+        return mass * g;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println("Nama            : " + getName());
+        System.out.printf("Surface area    : %.2f\n", getSurfaceArea());
+        System.out.printf("Volume          : %.2f\n", getVolume());
+        System.out.printf("Weight          : %.2f\n", getWeight());
+    }
+}
