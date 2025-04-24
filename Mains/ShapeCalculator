@@ -1,0 +1,102 @@
+package praktic.geometry.mains;
+
+// ===============================================
+//  Elfareta Zabrina Dewi
+//  NIM: 245150701111015
+//  ______ _      ______      _____  ______ _______       
+// |  ____| |    |  ____/\   |  __ \|  ____|__   __|/\    
+// | |__  | |    | |__ /  \  | |__) | |__     | |  /  \   
+// |  __| | |    |  __/ /\ \ |  _  /|  __|    | | / /\ \  
+// | |____| |____| | / ____ \| | \ \| |____   | |/ ____ \ 
+// |______|______|_|/_/    \_\_|  \_\______|  |_/_/    \_\
+//
+// ===============================================
+
+import java.util.Scanner;
+import praktic.geometry.shapes.*;
+import praktic.geometry.interfaces.ThreeDimensional;
+import praktic.geometry.interfaces.Weightable;
+
+public class ShapeCalculator {
+    public static final String RESET = "\u001B[0m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String RED = "\u001B[31m";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(GREEN + "======================================");
+        System.out.println("Shape Calculator");
+        System.out.println("Elfareta Zabrina Dewi");
+        System.out.println("245150701111015");
+        System.out.println("======================================" + RESET);
+
+        // Circle with radius input
+        System.out.println(CYAN + "2D Circle" + RESET);
+        System.out.println("======================================");
+        System.out.print("Enter radius    : ");
+        double circleRadius = scanner.nextDouble();
+        Circle circle = new Circle(circleRadius);
+        System.out.println("======================================");
+        circle.printInfo();
+        System.out.println("======================================");
+
+        // Square
+        System.out.println(CYAN + "2D Square" + RESET);
+        System.out.println("======================================");
+        System.out.print("Enter side      : ");
+        double squareSide = scanner.nextDouble();
+        Square square = new Square(squareSide);
+        System.out.println("======================================");
+        square.printInfo();
+        System.out.println("======================================");
+
+        // Cube
+        System.out.println(CYAN + "3D Weightable Cube" + RESET);
+        System.out.println("======================================");
+        System.out.print("Enter edge      : ");
+        double cubeEdge = scanner.nextDouble();
+        System.out.print("Enter mass      : ");
+        double cubeMass = scanner.nextDouble();
+        Cube cube = new Cube(cubeEdge, cubeMass);
+        System.out.println("======================================");
+        cube.printInfo();
+        System.out.println("======================================");
+
+        // Sphere
+        System.out.println(CYAN + "3D Weightable Sphere" + RESET);
+        System.out.println("======================================");
+        System.out.print("Enter radius    : ");
+        double sphereRadius = scanner.nextDouble();
+        System.out.print("Enter mass      : ");
+        double sphereMass = scanner.nextDouble();
+        Sphere sphere = new Sphere(sphereRadius, sphereMass);
+        System.out.println("======================================");
+        sphere.printInfo();
+        System.out.println("======================================");
+
+        // Polymorphism with Interfaces
+        System.out.println(RED + "Volume of Cube and Sphere" + RESET);
+        System.out.println(RED +"POLYMORPHISM: INTERFACE");
+        System.out.println(RED +"======================================");
+        System.out.print(RED +"Enter edge      : ");
+        double pEdge = scanner.nextDouble();
+        System.out.print(RED +"Enter radius    : ");
+        double pRadius = scanner.nextDouble();
+        System.out.print(RED +"Enter mass      : ");
+        double pMass = scanner.nextDouble();
+        System.out.println(RED +"======================================");
+
+        ThreeDimensional cube3D = new Cube(pEdge, pMass);
+        ThreeDimensional sphere3D = new Sphere(pRadius, pMass);
+        Weightable weightObject = new Cube(pEdge, pMass);
+
+        System.out.printf(RED + "Cube's volume   : %.2f\n" + RESET, cube3D.getVolume());
+        System.out.printf(RED + "Sphere's volume : %.2f\n" + RESET, sphere3D.getVolume());
+        System.out.printf(RED + "Weight          : %.2f\n" + RESET, weightObject.getWeight());
+        System.out.println(RED +"======================================");
+
+        scanner.close();
+    }
+}
