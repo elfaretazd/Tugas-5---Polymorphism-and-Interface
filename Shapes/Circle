@@ -1,0 +1,34 @@
+package praktic.geometry.shapes;
+
+import praktic.geometry.bases.CircularShape;
+import praktic.geometry.interfaces.TwoDimensional;
+
+public class Circle extends CircularShape implements TwoDimensional {
+
+    public Circle() {
+        super();
+        setName("Circle");
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+        setName("Circle");
+    }
+
+    @Override
+    public double getArea() {
+        return (PI_NUMERATOR * radius * radius) / PI_DENOMINATOR;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return (2 * PI_NUMERATOR * radius) / PI_DENOMINATOR;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println("Name            : " + getName());
+        System.out.printf("Area            : %.2f\n", getArea());
+        System.out.printf("Perimeter       : %.2f\n", getPerimeter());
+    }
+}
