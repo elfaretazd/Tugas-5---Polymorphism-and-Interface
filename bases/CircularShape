@@ -1,0 +1,19 @@
+package praktic.geometry.bases;
+
+public abstract class CircularShape extends Shape {
+    protected double radius;
+    protected final int PI_NUMERATOR = 22;
+    protected final int PI_DENOMINATOR = 7;
+
+    public CircularShape() {
+        this.radius = 0;
+    }
+
+    public void setRadius(double inputRadius) {
+        this.radius = inputRadius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+}
