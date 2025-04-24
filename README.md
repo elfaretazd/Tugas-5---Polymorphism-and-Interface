@@ -1,15 +1,5 @@
 # Tugas-5---Polymorphism-and-Interface
 
-## 📘 Ringkasan Proyek
-
-- **Nama Proyek:** ShapeCalculator
-- **Bahasa Pemrograman:** Java
-- **Topik:** Polymorphism & Interface
-- **Struktur Modular:** Package dan sub-package sesuai jenis class
-- **Jenis Bentuk:** Circle, Square, Cube, Sphere
-
----
-
 ## 📆 Struktur Folder
 ```
 praktic.geometry.bases        → abstract classes (Shape, CircularShape)
@@ -47,22 +37,3 @@ praktic.geometry.mains        → main class (ShapeCalculator)
 - Format output mengikuti format soal dan rapi di terminal
 
 ---
-
-## 🥪 Cara Menjalankan
-
-1. **Pastikan struktur folder sesuai.**
-2. **Compile semua file Java:**
-   ```bash
-   javac praktic/geometry/**/*.java
-   ```
-
-3. **Jalankan program utama:**
-   ```bash
-   java praktic.geometry.mains.ShapeCalculator
-   ```
-
-4. **Gunakan terminal yang mendukung ANSI Color:**
-   - Git Bash
-   - VS Code Terminal
-   - Windows Terminal
-   - Terminal IntelliJ / Eclipse
