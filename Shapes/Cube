@@ -1,0 +1,45 @@
+package praktic.geometry.shapes;
+
+import praktic.geometry.bases.Shape;
+import praktic.geometry.interfaces.ThreeDimensional;
+import praktic.geometry.interfaces.Weightable;
+
+public class Cube extends Shape implements ThreeDimensional, Weightable {
+    private double edge;
+    private double mass;
+
+    public Cube() {
+        this.edge = 0;
+        this.mass = 0;
+        setName("Cube");
+    }
+
+    public Cube(double edge, double mass) {
+        this.edge = edge;
+        this.mass = mass;
+        setName("Cube");
+    }
+
+    @Override
+    public double getSurfaceArea() {
+        return 6 * edge * edge;
+    }
+
+    @Override
+    public double getVolume() {
+        return edge * edge * edge;
+    }
+
+    @Override
+    public double getWeight() {
+        return mass * g;
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println("Name            : " + getName());
+        System.out.printf("Surface area    : %.2f\n", getSurfaceArea());
+        System.out.printf("Volume          : %.2f\n", getVolume());
+        System.out.printf("Weight          : %.2f\n", getWeight());
+    }
+}
